@@ -7,7 +7,9 @@ func sum(from values: [Double]) -> Double
 
 let maxValuesCount = 10_000
 
-// Алгоритм. Если значение values не подходящее, то вернет nil. Параметром hasCheckPositive можно включать проверку на положительные значения долей
+/// Алгоритм. Если значение values не подходящее, то вернет nil. Параметром hasCheckPositive можно включать проверку на положительные значения долей
+/// Вычислительная сложность, если исключить проверки O(2N), 16 Байт на каждый элемент входного массива требуется по памяти.
+/// Рациональные числа имеют свою точность, для наибольшей был выбран Double, поэтому обеспечить абсолютную точность вычислений невозможно и это будет отражено ниже в подсчете контрольной суммы
 func percents(from values: [Double], hasCheckPositive: Bool = false) -> [Double]?
 {
     guard values.count > 0 else {
@@ -34,7 +36,6 @@ func percents(from values: [Double], hasCheckPositive: Bool = false) -> [Double]
     // именуем значения массива, так как более сложное выражение
     return values.map{ value in
         return value / divider * 100.0
-        //return round(value / divider * 100_000.0) / 1000.0
     }
 }
 
