@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		E3D68E8323746C6000DB1C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7923746C6000DB1C16 /* Main.storyboard */; };
 		E3D68E8423746C6000DB1C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E7B23746C6000DB1C16 /* AppDelegate.swift */; };
 		E3D68E8723746C6000DB1C16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E7F23746C6000DB1C16 /* ViewController.swift */; };
+		E3D68E8A2374715E00DB1C16 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E892374715E00DB1C16 /* ChartViewController.swift */; };
+		E3D68E8D2374744900DB1C16 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E8C2374744900DB1C16 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		E3D68E7B23746C6000DB1C16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D68E7C23746C6000DB1C16 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D68E7F23746C6000DB1C16 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3D68E892374715E00DB1C16 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		E3D68E8C2374744900DB1C16 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E4F3FC870169F22C0151E12A /* Pods_skybonds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skybonds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,6 +168,8 @@
 		E3D68E7E23746C6000DB1C16 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E3D68E882374714400DB1C16 /* Chart */,
+				E3D68E8B2374743800DB1C16 /* Extension */,
 				E3D68E7F23746C6000DB1C16 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -176,6 +182,22 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		E3D68E882374714400DB1C16 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E892374715E00DB1C16 /* ChartViewController.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		E3D68E8B2374743800DB1C16 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E8C2374744900DB1C16 /* UIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		FA2EFFD7BE0C31249130C492 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +208,6 @@
 				9B62B2480EA571983B941247 /* Pods-skybondsTests.debug.xcconfig */,
 				19BA648EB6BE7660780A13F6 /* Pods-skybondsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -429,8 +450,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D68E8D2374744900DB1C16 /* UIView.swift in Sources */,
 				E3D68E8723746C6000DB1C16 /* ViewController.swift in Sources */,
 				E3D68E8423746C6000DB1C16 /* AppDelegate.swift in Sources */,
+				E3D68E8A2374715E00DB1C16 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

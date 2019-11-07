@@ -15,6 +15,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let contoller = segue.destination as? ChartViewController {
+            contoller.identifierISIN = segue.identifier
+        }
+    }
 
 }
 
