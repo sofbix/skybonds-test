@@ -24,9 +24,9 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
 
         leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: leadingOffset).isActive = true
-        trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: trailingOffset).isActive = true
+        superview.trailingAnchor.constraint(equalTo: trailingAnchor, constant: trailingOffset).isActive = true
         topAnchor.constraint(equalTo: superview.topAnchor, constant: topOffset).isActive = true
-        bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: bottomOffset).isActive = true
+        superview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: bottomOffset).isActive = true
     }
 
     func addConstaints(height: CGFloat, width: CGFloat) {
