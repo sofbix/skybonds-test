@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1694DBFEEFEA5E34FC2737E5 /* Pods_skybonds_skybondsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F683EBD016EDE5D195CD002 /* Pods_skybonds_skybondsUITests.framework */; };
+		2CAD3C35422F76F648F53095 /* Pods_skybondsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78ED08F47EB8681558797D8 /* Pods_skybondsTests.framework */; };
+		3ED8588B744F6BA6CC17F497 /* Pods_skybonds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F3FC870169F22C0151E12A /* Pods_skybonds.framework */; };
+		E3D68E5D23746B9900DB1C16 /* skybondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */; };
+		E3D68E6823746B9900DB1C16 /* skybondsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */; };
+		E3D68E8123746C6000DB1C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7623746C6000DB1C16 /* Assets.xcassets */; };
+		E3D68E8223746C6000DB1C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7723746C6000DB1C16 /* LaunchScreen.storyboard */; };
+		E3D68E8323746C6000DB1C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7923746C6000DB1C16 /* Main.storyboard */; };
+		E3D68E8423746C6000DB1C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E7B23746C6000DB1C16 /* AppDelegate.swift */; };
+		E3D68E8723746C6000DB1C16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E7F23746C6000DB1C16 /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3D68E5923746B9900DB1C16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3D68E3A23746B8C00DB1C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3D68E4123746B8C00DB1C16;
+			remoteInfo = skybonds;
+		};
+		E3D68E6423746B9900DB1C16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3D68E3A23746B8C00DB1C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3D68E4123746B8C00DB1C16;
+			remoteInfo = skybonds;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16A17B3B70BF09DCB3017A0B /* Pods-skybonds-skybondsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skybonds-skybondsUITests.debug.xcconfig"; path = "Target Support Files/Pods-skybonds-skybondsUITests/Pods-skybonds-skybondsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		19BA648EB6BE7660780A13F6 /* Pods-skybondsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skybondsTests.release.xcconfig"; path = "Target Support Files/Pods-skybondsTests/Pods-skybondsTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A3F89CE21B16576824776FC /* Pods-skybonds-skybondsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skybonds-skybondsUITests.release.xcconfig"; path = "Target Support Files/Pods-skybonds-skybondsUITests/Pods-skybonds-skybondsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4F683EBD016EDE5D195CD002 /* Pods_skybonds_skybondsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skybonds_skybondsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F98F9064417CEBE022D419C /* Pods-skybonds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skybonds.release.xcconfig"; path = "Target Support Files/Pods-skybonds/Pods-skybonds.release.xcconfig"; sourceTree = "<group>"; };
+		5F21FE75DF4DBA18B2DBE936 /* Pods-skybonds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skybonds.debug.xcconfig"; path = "Target Support Files/Pods-skybonds/Pods-skybonds.debug.xcconfig"; sourceTree = "<group>"; };
+		9B62B2480EA571983B941247 /* Pods-skybondsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skybondsTests.debug.xcconfig"; path = "Target Support Files/Pods-skybondsTests/Pods-skybondsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B78ED08F47EB8681558797D8 /* Pods_skybondsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skybondsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D68E4223746B8C00DB1C16 /* skybonds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skybonds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D68E5823746B9900DB1C16 /* skybondsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skybondsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skybondsTests.swift; sourceTree = "<group>"; };
+		E3D68E5E23746B9900DB1C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D68E6323746B9900DB1C16 /* skybondsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skybondsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skybondsUITests.swift; sourceTree = "<group>"; };
+		E3D68E6923746B9900DB1C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D68E7623746C6000DB1C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3D68E7823746C6000DB1C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3D68E7A23746C6000DB1C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3D68E7B23746C6000DB1C16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3D68E7C23746C6000DB1C16 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D68E7F23746C6000DB1C16 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4F3FC870169F22C0151E12A /* Pods_skybonds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skybonds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3D68E3F23746B8C00DB1C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ED8588B744F6BA6CC17F497 /* Pods_skybonds.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D68E5523746B9900DB1C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CAD3C35422F76F648F53095 /* Pods_skybondsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D68E6023746B9900DB1C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1694DBFEEFEA5E34FC2737E5 /* Pods_skybonds_skybondsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7387B8DEAE693F420B13238D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3FC870169F22C0151E12A /* Pods_skybonds.framework */,
+				4F683EBD016EDE5D195CD002 /* Pods_skybonds_skybondsUITests.framework */,
+				B78ED08F47EB8681558797D8 /* Pods_skybondsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3D68E3923746B8C00DB1C16 = {
+			isa = PBXGroup;
+			children = (
+				E3D68E4423746B8C00DB1C16 /* skybonds */,
+				E3D68E5B23746B9900DB1C16 /* skybondsTests */,
+				E3D68E6623746B9900DB1C16 /* skybondsUITests */,
+				E3D68E4323746B8C00DB1C16 /* Products */,
+				FA2EFFD7BE0C31249130C492 /* Pods */,
+				7387B8DEAE693F420B13238D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E3D68E4323746B8C00DB1C16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E4223746B8C00DB1C16 /* skybonds.app */,
+				E3D68E5823746B9900DB1C16 /* skybondsTests.xctest */,
+				E3D68E6323746B9900DB1C16 /* skybondsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3D68E4423746B8C00DB1C16 /* skybonds */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E8023746C6000DB1C16 /* Data */,
+				E3D68E7523746C6000DB1C16 /* Main */,
+				E3D68E7E23746C6000DB1C16 /* ViewControllers */,
+			);
+			path = skybonds;
+			sourceTree = "<group>";
+		};
+		E3D68E5B23746B9900DB1C16 /* skybondsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */,
+				E3D68E5E23746B9900DB1C16 /* Info.plist */,
+			);
+			path = skybondsTests;
+			sourceTree = "<group>";
+		};
+		E3D68E6623746B9900DB1C16 /* skybondsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */,
+				E3D68E6923746B9900DB1C16 /* Info.plist */,
+			);
+			path = skybondsUITests;
+			sourceTree = "<group>";
+		};
+		E3D68E7523746C6000DB1C16 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E7623746C6000DB1C16 /* Assets.xcassets */,
+				E3D68E7723746C6000DB1C16 /* LaunchScreen.storyboard */,
+				E3D68E7923746C6000DB1C16 /* Main.storyboard */,
+				E3D68E7B23746C6000DB1C16 /* AppDelegate.swift */,
+				E3D68E7C23746C6000DB1C16 /* Info.plist */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E3D68E7E23746C6000DB1C16 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3D68E7F23746C6000DB1C16 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E3D68E8023746C6000DB1C16 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FA2EFFD7BE0C31249130C492 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F21FE75DF4DBA18B2DBE936 /* Pods-skybonds.debug.xcconfig */,
+				4F98F9064417CEBE022D419C /* Pods-skybonds.release.xcconfig */,
+				16A17B3B70BF09DCB3017A0B /* Pods-skybonds-skybondsUITests.debug.xcconfig */,
+				2A3F89CE21B16576824776FC /* Pods-skybonds-skybondsUITests.release.xcconfig */,
+				9B62B2480EA571983B941247 /* Pods-skybondsTests.debug.xcconfig */,
+				19BA648EB6BE7660780A13F6 /* Pods-skybondsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3D68E4123746B8C00DB1C16 /* skybonds */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D68E6C23746B9900DB1C16 /* Build configuration list for PBXNativeTarget "skybonds" */;
+			buildPhases = (
+				80B66F4F5FAFBFCB4D1822C4 /* [CP] Check Pods Manifest.lock */,
+				E3D68E3E23746B8C00DB1C16 /* Sources */,
+				E3D68E3F23746B8C00DB1C16 /* Frameworks */,
+				E3D68E4023746B8C00DB1C16 /* Resources */,
+				575D093BF724CB1A15A1D86F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = skybonds;
+			productName = skybonds;
+			productReference = E3D68E4223746B8C00DB1C16 /* skybonds.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3D68E5723746B9900DB1C16 /* skybondsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D68E6F23746B9900DB1C16 /* Build configuration list for PBXNativeTarget "skybondsTests" */;
+			buildPhases = (
+				11797D0AF6BE15371E4DF182 /* [CP] Check Pods Manifest.lock */,
+				E3D68E5423746B9900DB1C16 /* Sources */,
+				E3D68E5523746B9900DB1C16 /* Frameworks */,
+				E3D68E5623746B9900DB1C16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3D68E5A23746B9900DB1C16 /* PBXTargetDependency */,
+			);
+			name = skybondsTests;
+			productName = skybondsTests;
+			productReference = E3D68E5823746B9900DB1C16 /* skybondsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E3D68E6223746B9900DB1C16 /* skybondsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D68E7223746B9900DB1C16 /* Build configuration list for PBXNativeTarget "skybondsUITests" */;
+			buildPhases = (
+				00775E29CE60AFD00C52E571 /* [CP] Check Pods Manifest.lock */,
+				E3D68E5F23746B9900DB1C16 /* Sources */,
+				E3D68E6023746B9900DB1C16 /* Frameworks */,
+				E3D68E6123746B9900DB1C16 /* Resources */,
+				C6EDCBDFB1F6C9EF0A46C1D4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3D68E6523746B9900DB1C16 /* PBXTargetDependency */,
+			);
+			name = skybondsUITests;
+			productName = skybondsUITests;
+			productReference = E3D68E6323746B9900DB1C16 /* skybondsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3D68E3A23746B8C00DB1C16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Altarix;
+				TargetAttributes = {
+					E3D68E4123746B8C00DB1C16 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					E3D68E5723746B9900DB1C16 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = E3D68E4123746B8C00DB1C16;
+					};
+					E3D68E6223746B9900DB1C16 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = E3D68E4123746B8C00DB1C16;
+					};
+				};
+			};
+			buildConfigurationList = E3D68E3D23746B8C00DB1C16 /* Build configuration list for PBXProject "skybonds" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3D68E3923746B8C00DB1C16;
+			productRefGroup = E3D68E4323746B8C00DB1C16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3D68E4123746B8C00DB1C16 /* skybonds */,
+				E3D68E5723746B9900DB1C16 /* skybondsTests */,
+				E3D68E6223746B9900DB1C16 /* skybondsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3D68E4023746B8C00DB1C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D68E8123746C6000DB1C16 /* Assets.xcassets in Resources */,
+				E3D68E8323746C6000DB1C16 /* Main.storyboard in Resources */,
+				E3D68E8223746C6000DB1C16 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D68E5623746B9900DB1C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D68E6123746B9900DB1C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00775E29CE60AFD00C52E571 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-skybonds-skybondsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		11797D0AF6BE15371E4DF182 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-skybondsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		575D093BF724CB1A15A1D86F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-skybonds/Pods-skybonds-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-skybonds/Pods-skybonds-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-skybonds/Pods-skybonds-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80B66F4F5FAFBFCB4D1822C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-skybonds-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6EDCBDFB1F6C9EF0A46C1D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-skybonds-skybondsUITests/Pods-skybonds-skybondsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-skybonds-skybondsUITests/Pods-skybonds-skybondsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-skybonds-skybondsUITests/Pods-skybonds-skybondsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3D68E3E23746B8C00DB1C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D68E8723746C6000DB1C16 /* ViewController.swift in Sources */,
+				E3D68E8423746C6000DB1C16 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D68E5423746B9900DB1C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D68E5D23746B9900DB1C16 /* skybondsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D68E5F23746B9900DB1C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D68E6823746B9900DB1C16 /* skybondsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3D68E5A23746B9900DB1C16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3D68E4123746B8C00DB1C16 /* skybonds */;
+			targetProxy = E3D68E5923746B9900DB1C16 /* PBXContainerItemProxy */;
+		};
+		E3D68E6523746B9900DB1C16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3D68E4123746B8C00DB1C16 /* skybonds */;
+			targetProxy = E3D68E6423746B9900DB1C16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3D68E7723746C6000DB1C16 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3D68E7823746C6000DB1C16 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E3D68E7923746C6000DB1C16 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3D68E7A23746C6000DB1C16 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3D68E6A23746B9900DB1C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3D68E6B23746B9900DB1C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3D68E6D23746B9900DB1C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F21FE75DF4DBA18B2DBE936 /* Pods-skybonds.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FDK83T8QNS;
+				INFOPLIST_FILE = skybonds/Main/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Byterix.skybonds;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3D68E6E23746B9900DB1C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F98F9064417CEBE022D419C /* Pods-skybonds.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FDK83T8QNS;
+				INFOPLIST_FILE = skybonds/Main/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Byterix.skybonds;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E3D68E7023746B9900DB1C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B62B2480EA571983B941247 /* Pods-skybondsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FDK83T8QNS;
+				INFOPLIST_FILE = skybondsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Altarix.skybondsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/skybonds.app/skybonds";
+			};
+			name = Debug;
+		};
+		E3D68E7123746B9900DB1C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19BA648EB6BE7660780A13F6 /* Pods-skybondsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FDK83T8QNS;
+				INFOPLIST_FILE = skybondsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Altarix.skybondsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/skybonds.app/skybonds";
+			};
+			name = Release;
+		};
+		E3D68E7323746B9900DB1C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16A17B3B70BF09DCB3017A0B /* Pods-skybonds-skybondsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FDK83T8QNS;
+				INFOPLIST_FILE = skybondsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Altarix.skybondsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = skybonds;
+			};
+			name = Debug;
+		};
+		E3D68E7423746B9900DB1C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A3F89CE21B16576824776FC /* Pods-skybonds-skybondsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FDK83T8QNS;
+				INFOPLIST_FILE = skybondsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Altarix.skybondsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = skybonds;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3D68E3D23746B8C00DB1C16 /* Build configuration list for PBXProject "skybonds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D68E6A23746B9900DB1C16 /* Debug */,
+				E3D68E6B23746B9900DB1C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D68E6C23746B9900DB1C16 /* Build configuration list for PBXNativeTarget "skybonds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D68E6D23746B9900DB1C16 /* Debug */,
+				E3D68E6E23746B9900DB1C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D68E6F23746B9900DB1C16 /* Build configuration list for PBXNativeTarget "skybondsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D68E7023746B9900DB1C16 /* Debug */,
+				E3D68E7123746B9900DB1C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D68E7223746B9900DB1C16 /* Build configuration list for PBXNativeTarget "skybondsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D68E7323746B9900DB1C16 /* Debug */,
+				E3D68E7423746B9900DB1C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3D68E3A23746B8C00DB1C16 /* Project object */;
+}
