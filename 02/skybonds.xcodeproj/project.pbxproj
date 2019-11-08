@@ -16,6 +16,7 @@
 		E30594182374BF70003A9A2C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30594172374BF70003A9A2C /* Settings.swift */; };
 		E305941B2374BFCD003A9A2C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305941A2374BFCD003A9A2C /* DateFormatter.swift */; };
 		E32AA275237563040059CF5D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA274237563040059CF5D /* UIColor.swift */; };
+		E32AA27723756A560059CF5D /* PromiseKitCancellablePromise.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA27623756A560059CF5D /* PromiseKitCancellablePromise.swift .swift */; };
 		E3D68E5D23746B9900DB1C16 /* skybondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */; };
 		E3D68E6823746B9900DB1C16 /* skybondsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */; };
 		E3D68E8123746C6000DB1C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7623746C6000DB1C16 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		E30594172374BF70003A9A2C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E305941A2374BFCD003A9A2C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		E32AA274237563040059CF5D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E32AA27623756A560059CF5D /* PromiseKitCancellablePromise.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PromiseKitCancellablePromise.swift .swift"; sourceTree = "<group>"; };
 		E3D68E4223746B8C00DB1C16 /* skybonds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skybonds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68E5823746B9900DB1C16 /* skybondsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skybondsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skybondsTests.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				E305941A2374BFCD003A9A2C /* DateFormatter.swift */,
+				E32AA27623756A560059CF5D /* PromiseKitCancellablePromise.swift .swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				E305941B2374BFCD003A9A2C /* DateFormatter.swift in Sources */,
 				E3D68E8D2374744900DB1C16 /* UIView.swift in Sources */,
 				E3D68E8723746C6000DB1C16 /* ViewController.swift in Sources */,
+				E32AA27723756A560059CF5D /* PromiseKitCancellablePromise.swift .swift in Sources */,
 				E30594182374BF70003A9A2C /* Settings.swift in Sources */,
 				E30594142374BCDD003A9A2C /* ApiService.swift in Sources */,
 				E30594122374B447003A9A2C /* ChartPeriod.swift in Sources */,

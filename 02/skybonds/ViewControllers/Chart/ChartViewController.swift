@@ -8,10 +8,10 @@
 
 import UIKit
 import Charts
-
+import PromiseKit
 
 final class ChartViewController: UIViewController, ChartViewDelegate {
-    
+
     /// входной идентификатор ISIN
     var identifierISIN: String?
     {
@@ -26,6 +26,7 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     var textColor = UIColor.standartTextColor
     var actionColor = UIColor.red
     
+    private var currentPromise: CancellablePromise<BondEntity>? = nil
     
     // график
     private let chartView = CombinedChartView()
@@ -131,15 +132,20 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         }
         showProgress()
         updateChart(from: [])
-        ApiService.getBond(with: identifierISIN, from: currentPeriod)
+        currentPromise?.cancel()
+        let promise = ApiService.getBond(with: identifierISIN, from: currentPeriod)
+        promise
             .done{[weak self] bondEntity in
                 guard let this = self else {return}
                 this.updateChart(from: bondEntity)
-            }.ensure {[weak self] in
-                self?.hideProgress()
-            }.catch{ error in
+                this.stopUpdateContentData()
+            }.catch{[weak self] error in
+                if error.isCancelled == false {
+                    self?.stopUpdateContentData()
+                }
                 print("error: \(error)")
             }
+        currentPromise = promise
     }
     
     private func showProgress() {
@@ -152,7 +158,13 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         chartView.isHidden = false
     }
     
+    private func stopUpdateContentData() {
+        self.hideProgress()
+        self.currentPromise = nil
+    }
+    
     private func updateChart(from entity: BondEntity){
+        print("update Chart with value")
         var valueEntries: [ChartDataEntry] = []
         for price in entity.prices {
             let x = price.date.timeIntervalSinceReferenceDate
