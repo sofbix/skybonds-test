@@ -63,85 +63,18 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     // прогресс
     private let indicator = UIActivityIndicatorView()
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUI()
+        
         view.addSubview(chartView)
-        chartView.delegate = self
-        
-        chartView.chartDescription?.enabled = false
-        chartView.dragEnabled = true
-        chartView.setScaleEnabled(true)
-        chartView.pinchZoomEnabled = true
-        chartView.noDataFont = textFont
-        
-        let legend = chartView.legend
-        legend.form = .none
-        
-        let xAxis = chartView.xAxis
-        xAxis.labelFont = textFont
-        xAxis.labelTextColor = textColor
-        xAxis.labelPosition = .bottom
-        xAxis.drawAxisLineEnabled = false
-        xAxis.valueFormatter = self
-
-        let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = textFont
-        leftAxis.labelTextColor = textColor
-        leftAxis.drawGridLinesEnabled = true
-        leftAxis.granularityEnabled = true
-        leftAxis.valueFormatter = self
-        
-        chartView.rightAxis.enabled = false
-        
         view.addSubview(periodSegmentControl)
-        for (index, period) in periods.enumerated(){
-            periodSegmentControl.insertSegment(withTitle: period.label, at: index, animated: false)
-        }
-        if periods.count > 0 {
-            currentPeriodIndex = 0
-        }
-        periodSegmentControl.setTitleTextAttributes([ NSAttributedString.Key.font : textFont ], for: .normal)
-        periodSegmentControl.addTarget(self, action: #selector(changePeriod), for: .valueChanged)
-        
-        if #available(iOS 13, *){
-            indicator.style = .large
-        } else {
-            indicator.style = .whiteLarge
-        }
-        indicator.color = actionColor
-        view.addSubview(indicator)
-        
         view.addSubview(modeSegmentControl)
-        modeSegmentControl.insertSegment(withTitle: currentMode.label, at: 0, animated: false)
-        modeSegmentControl.isMomentary = true
-        modeSegmentControl.setTitleTextAttributes([ NSAttributedString.Key.font : textFont ], for: .normal)
-        modeSegmentControl.addTarget(self, action: #selector(changeMode), for: .valueChanged)
-        
-        chartView.translatesAutoresizingMaskIntoConstraints = false
-        periodSegmentControl.translatesAutoresizingMaskIntoConstraints = false
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        modeSegmentControl.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(indicator)
 
-        chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        view.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: 0).isActive = true
-        chartView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        
-        periodSegmentControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        chartView.bottomAnchor.constraint(equalTo: periodSegmentControl.topAnchor, constant: 0).isActive = true
-        periodSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        view.trailingAnchor.constraint(equalTo: periodSegmentControl.trailingAnchor, constant: 0).isActive = true
-        view.bottomAnchor.constraint(equalTo: periodSegmentControl.bottomAnchor, constant: 0).isActive = true
-        
-        modeSegmentControl.addConstaints(height: 44, width: 120)
-        modeSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
-        modeSegmentControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-        
-        
-        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
+        addConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -265,6 +198,88 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         } else {
             currentMode = .price
         }
+    }
+    
+}
+
+extension ChartViewController {
+    
+    fileprivate func addConstraints() {
+        chartView.translatesAutoresizingMaskIntoConstraints = false
+        periodSegmentControl.translatesAutoresizingMaskIntoConstraints = false
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        modeSegmentControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        view.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: 0).isActive = true
+        chartView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        
+        periodSegmentControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        chartView.bottomAnchor.constraint(equalTo: periodSegmentControl.topAnchor, constant: 0).isActive = true
+        periodSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        view.trailingAnchor.constraint(equalTo: periodSegmentControl.trailingAnchor, constant: 0).isActive = true
+        view.bottomAnchor.constraint(equalTo: periodSegmentControl.bottomAnchor, constant: 0).isActive = true
+        
+        modeSegmentControl.addConstaints(height: 44, width: 120)
+        modeSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
+        modeSegmentControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    private func configureChart() {
+        
+        chartView.delegate = self
+        
+        chartView.chartDescription?.enabled = false
+        chartView.dragEnabled = true
+        chartView.setScaleEnabled(true)
+        chartView.pinchZoomEnabled = true
+        chartView.noDataFont = textFont
+        
+        chartView.legend.form = .none
+        chartView.rightAxis.enabled = false
+        
+        let xAxis = chartView.xAxis
+        xAxis.labelFont = textFont
+        xAxis.labelTextColor = textColor
+        xAxis.labelPosition = .bottom
+        xAxis.drawAxisLineEnabled = false
+        xAxis.valueFormatter = self
+        
+        let leftAxis = chartView.leftAxis
+        leftAxis.labelFont = textFont
+        leftAxis.labelTextColor = textColor
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.granularityEnabled = true
+        leftAxis.valueFormatter = self
+    }
+    
+    fileprivate func configureUI() {
+        
+        configureChart()
+        
+        for (index, period) in periods.enumerated(){
+            periodSegmentControl.insertSegment(withTitle: period.label, at: index, animated: false)
+        }
+        if periods.count > 0 {
+            currentPeriodIndex = 0
+        }
+        periodSegmentControl.setTitleTextAttributes([ NSAttributedString.Key.font : textFont ], for: .normal)
+        periodSegmentControl.addTarget(self, action: #selector(changePeriod), for: .valueChanged)
+        
+        modeSegmentControl.insertSegment(withTitle: currentMode.label, at: 0, animated: false)
+        modeSegmentControl.isMomentary = true
+        modeSegmentControl.setTitleTextAttributes([ NSAttributedString.Key.font : textFont ], for: .normal)
+        modeSegmentControl.addTarget(self, action: #selector(changeMode), for: .valueChanged)
+        
+        if #available(iOS 13, *){
+            indicator.style = .large
+        } else {
+            indicator.style = .whiteLarge
+        }
+        indicator.color = actionColor
     }
     
 }
