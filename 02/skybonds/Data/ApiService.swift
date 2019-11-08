@@ -11,7 +11,7 @@ import PromiseKit
 
 struct ApiService {
 
-    static func getBond(with id: String, from period: ChartPeriod) -> CancellablePromise<BondEntity>
+    static func getBond(with id: String, from period: BondPeriod) -> CancellablePromise<BondEntity>
     {
         return CancellablePromise<BondEntity>.init(resolver: { seal in
             DispatchQueue.global().async{
@@ -27,7 +27,7 @@ struct ApiService {
     }
     
     /// Генерирует случайную цену, отталкиваясь от цены на начало указанного периода
-    private static func getRandomPrices(period: ChartPeriod, startValue: Double) -> [PriceEntity]
+    private static func getRandomPrices(period: BondPeriod, startValue: Double) -> [PriceEntity]
     {
         var prices : [PriceEntity] = []
         

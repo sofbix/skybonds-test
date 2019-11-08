@@ -32,12 +32,12 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     private let chartView = CombinedChartView()
     
     // все что касается периода
-    private let periods: [ChartPeriod] = ChartPeriod.allCases
+    private let periods: [BondPeriod] = BondPeriod.allCases
     private var currentPeriodIndex: Int {
         get{ periodSegmentControl.selectedSegmentIndex }
         set{ periodSegmentControl.selectedSegmentIndex = newValue }
     }
-    private var currentPeriod: ChartPeriod? {
+    private var currentPeriod: BondPeriod? {
         guard currentPeriodIndex > -1 && currentPeriodIndex < periods.count else {
             return nil
         }

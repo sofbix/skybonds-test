@@ -1,5 +1,5 @@
 //
-//  ChartPeriod.swift
+//  BondPeriod.swift
 //  skybonds
 //
 //  Created by Sergey Balalaev on 08.11.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ChartPeriod : String, CaseIterable {
+enum BondPeriod : String, CaseIterable {
     case week
     case month
     case threeMonth
@@ -17,7 +17,7 @@ enum ChartPeriod : String, CaseIterable {
     case twoYear
 }
 
-extension ChartPeriod {
+extension BondPeriod {
     
     var label: String {
         switch self {
