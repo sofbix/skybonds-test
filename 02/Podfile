@@ -6,6 +6,7 @@ target 'skybonds' do
   use_frameworks!
 
   pod 'Charts'
+  pod 'PromiseKit'
 
   # Pods for skybonds
 

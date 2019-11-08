@@ -12,7 +12,7 @@ import Charts
 
 final class ChartViewController: UIViewController, ChartViewDelegate {
     
-    // входной идентификатор ISIN
+    /// входной идентификатор ISIN
     var identifierISIN: String?
     {
         didSet {
@@ -21,6 +21,10 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
             }
         }
     }
+    /// можно управлять отображением
+    var textFont = UIFont.systemFont(ofSize: 16)
+    var textColor = UIColor.standartTextColor
+    
     
     // график
     private let chartView = CombinedChartView()
@@ -41,6 +45,8 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     
     //
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,26 +57,26 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
         chartView.pinchZoomEnabled = true
+        chartView.noDataFont = textFont
         
         let legend = chartView.legend
         legend.form = .none
         
         let xAxis = chartView.xAxis
-        xAxis.labelFont = .systemFont(ofSize: 12)
-        xAxis.labelTextColor = .darkGray
+        xAxis.labelFont = textFont
+        xAxis.labelTextColor = textColor
         xAxis.labelPosition = .bottom
         xAxis.drawAxisLineEnabled = false
         xAxis.valueFormatter = self
-        
-        
-        
+
         let leftAxis = chartView.leftAxis
-        leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
-        //leftAxis.axisMaximum = 300
-        leftAxis.axisMinimum = 0
+        leftAxis.labelFont = textFont
+        leftAxis.labelTextColor = textColor
         leftAxis.drawGridLinesEnabled = true
         leftAxis.granularityEnabled = true
         leftAxis.valueFormatter = self
+        
+        chartView.rightAxis.enabled = false
         
         view.addSubview(periodSegmentControl)
         //periodSegmentController.addConstaintsToSuperview(leadingOffset: 20, trailingOffset: -20, topOffset: 200, bottomOffset: -200)
@@ -80,7 +86,7 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         if periods.count > 0 {
             currentPeriodIndex = 0
         }
-        periodSegmentControl.tintColor = .systemBlue
+        periodSegmentControl.setTitleTextAttributes([ NSAttributedString.Key.font : textFont ], for: .normal)
         periodSegmentControl.addTarget(self, action: #selector(changePeriod), for: .valueChanged)
         
         chartView.translatesAutoresizingMaskIntoConstraints = false
@@ -104,33 +110,52 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     }
     
     func updateContentData(){
-        guard let currentPeriod = currentPeriod else {
+        guard
+            let currentPeriod = currentPeriod,
+            let identifierISIN = identifierISIN
+        else {
             return
         }
-        let values = ApiService.getValues(from: currentPeriod)
+        ApiService.getBond(with: identifierISIN, from: currentPeriod)
+            .done{[weak self] bondEntity in
+                guard let this = self else {return}
+                this.updateChart(from: bondEntity)
+            }.catch{ error in
+                print("error: \(error)")
+            }
+    }
+    
+    func updateChart(from entity: BondEntity){
         var valueEntries: [ChartDataEntry] = []
-        for value in values {
-            let x = value.date.timeIntervalSinceReferenceDate
-            let y = value.value
+        for price in entity.prices {
+            let x = price.date.timeIntervalSinceReferenceDate
+            let y = price.value
             valueEntries.append(ChartDataEntry(x: x, y: y))
         }
         // Формируем график
         let valueSet = LineChartDataSet(entries: valueEntries, label: "")
+        valueSet.valueFont = textFont
         valueSet.axisDependency = .left
+        
         valueSet.setColor(.red)
-        valueSet.setCircleColor(.gray)
         valueSet.lineWidth = 2
+        
+        valueSet.setCircleColor(textColor)
         valueSet.circleRadius = 3
+        
         valueSet.fillAlpha = 65/255
         valueSet.fillColor = .red
-        valueSet.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        
+        valueSet.highlightColor = .red
         valueSet.drawCircleHoleEnabled = false
-        valueSet.drawValuesEnabled = false
+        valueSet.drawValuesEnabled = true
         valueSet.mode = .cubicBezier
+        
         // Обновляем график
         let lineChart = LineChartData(dataSets: [valueSet])
-        lineChart.setValueTextColor(.gray)
-        lineChart.setValueFont(.systemFont(ofSize: 9))
+        lineChart.setValueTextColor(textColor)
+        lineChart.setDrawValues(true)
+        lineChart.setValueFont(textFont)
         let combineData = CombinedChartData()
         combineData.lineData = lineChart
         chartView.data = combineData

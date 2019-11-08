@@ -12,9 +12,10 @@
 		3ED8588B744F6BA6CC17F497 /* Pods_skybonds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F3FC870169F22C0151E12A /* Pods_skybonds.framework */; };
 		E30594122374B447003A9A2C /* ChartPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30594112374B447003A9A2C /* ChartPeriod.swift */; };
 		E30594142374BCDD003A9A2C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30594132374BCDD003A9A2C /* ApiService.swift */; };
-		E30594162374BD27003A9A2C /* ChartValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30594152374BD27003A9A2C /* ChartValue.swift */; };
+		E30594162374BD27003A9A2C /* BondEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30594152374BD27003A9A2C /* BondEntity.swift */; };
 		E30594182374BF70003A9A2C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30594172374BF70003A9A2C /* Settings.swift */; };
 		E305941B2374BFCD003A9A2C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305941A2374BFCD003A9A2C /* DateFormatter.swift */; };
+		E32AA275237563040059CF5D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA274237563040059CF5D /* UIColor.swift */; };
 		E3D68E5D23746B9900DB1C16 /* skybondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */; };
 		E3D68E6823746B9900DB1C16 /* skybondsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */; };
 		E3D68E8123746C6000DB1C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7623746C6000DB1C16 /* Assets.xcassets */; };
@@ -54,9 +55,10 @@
 		B78ED08F47EB8681558797D8 /* Pods_skybondsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skybondsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30594112374B447003A9A2C /* ChartPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPeriod.swift; sourceTree = "<group>"; };
 		E30594132374BCDD003A9A2C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		E30594152374BD27003A9A2C /* ChartValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartValue.swift; sourceTree = "<group>"; };
+		E30594152374BD27003A9A2C /* BondEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondEntity.swift; sourceTree = "<group>"; };
 		E30594172374BF70003A9A2C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E305941A2374BFCD003A9A2C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		E32AA274237563040059CF5D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E3D68E4223746B8C00DB1C16 /* skybonds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skybonds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68E5823746B9900DB1C16 /* skybondsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skybondsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skybondsTests.swift; sourceTree = "<group>"; };
@@ -200,7 +202,7 @@
 			children = (
 				E30594112374B447003A9A2C /* ChartPeriod.swift */,
 				E30594132374BCDD003A9A2C /* ApiService.swift */,
-				E30594152374BD27003A9A2C /* ChartValue.swift */,
+				E30594152374BD27003A9A2C /* BondEntity.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D68E8C2374744900DB1C16 /* UIView.swift */,
+				E32AA274237563040059CF5D /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -479,9 +482,10 @@
 				E30594182374BF70003A9A2C /* Settings.swift in Sources */,
 				E30594142374BCDD003A9A2C /* ApiService.swift in Sources */,
 				E30594122374B447003A9A2C /* ChartPeriod.swift in Sources */,
-				E30594162374BD27003A9A2C /* ChartValue.swift in Sources */,
+				E30594162374BD27003A9A2C /* BondEntity.swift in Sources */,
 				E3D68E8423746C6000DB1C16 /* AppDelegate.swift in Sources */,
 				E3D68E8A2374715E00DB1C16 /* ChartViewController.swift in Sources */,
+				E32AA275237563040059CF5D /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
