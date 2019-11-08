@@ -21,6 +21,15 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
             }
         }
     }
+    /// режим отображения
+    var currentMode: ChartMode = .price {
+        didSet{
+            if isViewLoaded {
+                modeSegmentControl.setTitle(currentMode.label, forSegmentAt: 0)
+                updateChart()
+            }
+        }
+    }
     /// можно управлять отображением
     var textFont = UIFont.systemFont(ofSize: 16)
     var textColor = UIColor.standartTextColor
@@ -46,15 +55,9 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     }
     private let periodSegmentControl = UISegmentedControl()
     
-    // режим отображения
-    private var currentMode: ChartMode = .price {
-        didSet{
-            if isViewLoaded {
-                modeSegmentControl.setTitle(currentMode.label, forSegmentAt: 0)
-            }
-        }
-    }
     private let modeSegmentControl = UISegmentedControl()
+    
+    private var currentBond: BondEntity? = nil
     
     // прогресс
     private let indicator = UIActivityIndicatorView()
@@ -173,11 +176,13 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     private func showProgress() {
         indicator.startAnimating()
         chartView.isHidden = true
+        modeSegmentControl.isHidden = true
     }
     
     private func hideProgress() {
         indicator.stopAnimating()
         chartView.isHidden = false
+        modeSegmentControl.isHidden = false
     }
     
     private func stopUpdateContentData() {
@@ -185,8 +190,11 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         self.currentPromise = nil
     }
     
-    private func updateChart(from bond: BondEntity){
-        print("update Chart with value")
+    private func updateChart(){
+        guard let bond = self.currentBond else {
+            updateChart(from: [])
+            return
+        }
         var valueEntries: [ChartDataEntry] = []
         if currentMode == .price {
             valueEntries = bond.prices.map{ price in
@@ -206,6 +214,12 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
             }
         }
         updateChart(from: valueEntries)
+    }
+    
+    private func updateChart(from bond: BondEntity){
+        print("update Bond")
+        currentBond = bond
+        updateChart()
     }
     
     private func updateChart(from valueEntries: [ChartDataEntry]){
@@ -250,7 +264,6 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         } else {
             currentMode = .price
         }
-        updateContentData()
     }
     
 }
