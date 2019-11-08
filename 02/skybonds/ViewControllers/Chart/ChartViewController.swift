@@ -198,7 +198,7 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
             let yieldPrice = bond.yield * bond.startPrice
             valueEntries = bond.prices.map{ price in
                 let x = price.date.timeIntervalSinceReferenceDate
-                let y = yieldPrice / price.value
+                let y = price.value == 0 ? 100 : yieldPrice / price.value
                 return ChartDataEntry(x: x, y: y)
             }
         }
