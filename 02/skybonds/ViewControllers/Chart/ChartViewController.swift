@@ -24,6 +24,7 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     /// можно управлять отображением
     var textFont = UIFont.systemFont(ofSize: 16)
     var textColor = UIColor.standartTextColor
+    var actionColor = UIColor.red
     
     
     // график
@@ -43,8 +44,8 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     }
     private let periodSegmentControl = UISegmentedControl()
     
-    //
-    
+    // прогресс
+    private let indicator = UIActivityIndicatorView()
     
     
     override func viewDidLoad() {
@@ -89,8 +90,17 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         periodSegmentControl.setTitleTextAttributes([ NSAttributedString.Key.font : textFont ], for: .normal)
         periodSegmentControl.addTarget(self, action: #selector(changePeriod), for: .valueChanged)
         
+        if #available(iOS 13, *){
+            indicator.style = .large
+        } else {
+            indicator.style = .whiteLarge
+        }
+        indicator.color = actionColor
+        view.addSubview(indicator)
+        
         chartView.translatesAutoresizingMaskIntoConstraints = false
         periodSegmentControl.translatesAutoresizingMaskIntoConstraints = false
+        indicator.translatesAutoresizingMaskIntoConstraints = false
 
         chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         view.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: 0).isActive = true
@@ -101,6 +111,9 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         periodSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         view.trailingAnchor.constraint(equalTo: periodSegmentControl.trailingAnchor, constant: 0).isActive = true
         view.bottomAnchor.constraint(equalTo: periodSegmentControl.bottomAnchor, constant: 0).isActive = true
+        
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
     }
     
@@ -116,22 +129,40 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         else {
             return
         }
+        showProgress()
+        updateChart(from: [])
         ApiService.getBond(with: identifierISIN, from: currentPeriod)
             .done{[weak self] bondEntity in
                 guard let this = self else {return}
                 this.updateChart(from: bondEntity)
+            }.ensure {[weak self] in
+                self?.hideProgress()
             }.catch{ error in
                 print("error: \(error)")
             }
     }
     
-    func updateChart(from entity: BondEntity){
+    private func showProgress() {
+        indicator.startAnimating()
+        chartView.isHidden = true
+    }
+    
+    private func hideProgress() {
+        indicator.stopAnimating()
+        chartView.isHidden = false
+    }
+    
+    private func updateChart(from entity: BondEntity){
         var valueEntries: [ChartDataEntry] = []
         for price in entity.prices {
             let x = price.date.timeIntervalSinceReferenceDate
             let y = price.value
             valueEntries.append(ChartDataEntry(x: x, y: y))
         }
+        updateChart(from: valueEntries)
+    }
+    
+    private func updateChart(from valueEntries: [ChartDataEntry]){
         // Формируем график
         let valueSet = LineChartDataSet(entries: valueEntries, label: "")
         valueSet.valueFont = textFont
@@ -144,9 +175,9 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         valueSet.circleRadius = 3
         
         valueSet.fillAlpha = 65/255
-        valueSet.fillColor = .red
+        valueSet.fillColor = actionColor
         
-        valueSet.highlightColor = .red
+        valueSet.highlightColor = actionColor
         valueSet.drawCircleHoleEnabled = false
         valueSet.drawValuesEnabled = true
         valueSet.mode = .cubicBezier
