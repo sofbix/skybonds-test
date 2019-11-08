@@ -13,7 +13,7 @@ import PromiseKit
 final class ChartViewController: UIViewController, ChartViewDelegate {
 
     /// входной идентификатор ISIN
-    var identifierISIN: String?
+    @IBInspectable var identifierISIN: String?
     {
         didSet {
             if isViewLoaded {
@@ -31,12 +31,14 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         }
     }
     /// можно управлять отображением
-    var textFont = UIFont.systemFont(ofSize: 16)
-    var textColor = UIColor.standartTextColor
-    var actionColor = UIColor.red
+    @IBInspectable var textFont : UIFont = .systemFont(ofSize: 16)
+    @IBInspectable var textColor : UIColor = .standartTextColor
+    @IBInspectable var actionColor : UIColor = .red
     
-    /// для отмены загрузки данных
+    // для отмены загрузки данных
     private var currentPromise: CancellablePromise<BondEntity>? = nil
+    // для работы в офлайн с загруженными данными
+    private var currentBond: BondEntity? = nil
     
     // график
     private let chartView = CombinedChartView()
@@ -55,9 +57,8 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     }
     private let periodSegmentControl = UISegmentedControl()
     
+    // меняет режим
     private let modeSegmentControl = UISegmentedControl()
-    
-    private var currentBond: BondEntity? = nil
     
     // прогресс
     private let indicator = UIActivityIndicatorView()
