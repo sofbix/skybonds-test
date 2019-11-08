@@ -1,6 +1,6 @@
 # Выполненое задание для компании Skybonds
 
-- [x] iOS 11+ supporting
+- [x] iOS 11+ supporting (up to 13.x)
 
 ## Оглавление
 
