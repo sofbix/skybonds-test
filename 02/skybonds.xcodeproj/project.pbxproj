@@ -19,7 +19,7 @@
 		E32AA27723756A560059CF5D /* PromiseKitCancellablePromise.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA27623756A560059CF5D /* PromiseKitCancellablePromise.swift .swift */; };
 		E32AA279237576E50059CF5D /* ChartMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA278237576E50059CF5D /* ChartMode.swift */; };
 		E3D68E5D23746B9900DB1C16 /* skybondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */; };
-		E3D68E6823746B9900DB1C16 /* skybondsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */; };
+		E3D68E6823746B9900DB1C16 /* ChartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E6723746B9900DB1C16 /* ChartUITests.swift */; };
 		E3D68E8123746C6000DB1C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7623746C6000DB1C16 /* Assets.xcassets */; };
 		E3D68E8223746C6000DB1C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7723746C6000DB1C16 /* LaunchScreen.storyboard */; };
 		E3D68E8323746C6000DB1C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7923746C6000DB1C16 /* Main.storyboard */; };
@@ -68,7 +68,7 @@
 		E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skybondsTests.swift; sourceTree = "<group>"; };
 		E3D68E5E23746B9900DB1C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D68E6323746B9900DB1C16 /* skybondsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skybondsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skybondsUITests.swift; sourceTree = "<group>"; };
+		E3D68E6723746B9900DB1C16 /* ChartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUITests.swift; sourceTree = "<group>"; };
 		E3D68E6923746B9900DB1C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D68E7623746C6000DB1C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3D68E7823746C6000DB1C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		E3D68E6623746B9900DB1C16 /* skybondsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E3D68E6723746B9900DB1C16 /* skybondsUITests.swift */,
+				E3D68E6723746B9900DB1C16 /* ChartUITests.swift */,
 				E3D68E6923746B9900DB1C16 /* Info.plist */,
 			);
 			path = skybondsUITests;
@@ -509,7 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D68E6823746B9900DB1C16 /* skybondsUITests.swift in Sources */,
+				E3D68E6823746B9900DB1C16 /* ChartUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
