@@ -26,6 +26,7 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     var textColor = UIColor.standartTextColor
     var actionColor = UIColor.red
     
+    /// для отмены загрузки данных
     private var currentPromise: CancellablePromise<BondEntity>? = nil
     
     // график
@@ -44,6 +45,16 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         return periods[currentPeriodIndex]
     }
     private let periodSegmentControl = UISegmentedControl()
+    
+    // режим отображения
+    private var currentMode: ChartMode = .price {
+        didSet{
+            if isViewLoaded {
+                modeSegmentControl.setTitle(currentMode.label, forSegmentAt: 0)
+            }
+        }
+    }
+    private let modeSegmentControl = UISegmentedControl()
     
     // прогресс
     private let indicator = UIActivityIndicatorView()
@@ -81,7 +92,6 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         chartView.rightAxis.enabled = false
         
         view.addSubview(periodSegmentControl)
-        //periodSegmentController.addConstaintsToSuperview(leadingOffset: 20, trailingOffset: -20, topOffset: 200, bottomOffset: -200)
         for (index, period) in periods.enumerated(){
             periodSegmentControl.insertSegment(withTitle: period.label, at: index, animated: false)
         }
@@ -99,9 +109,16 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         indicator.color = actionColor
         view.addSubview(indicator)
         
+        view.addSubview(modeSegmentControl)
+        modeSegmentControl.insertSegment(withTitle: currentMode.label, at: 0, animated: false)
+        modeSegmentControl.isMomentary = true
+        modeSegmentControl.setTitleTextAttributes([ NSAttributedString.Key.font : textFont ], for: .normal)
+        modeSegmentControl.addTarget(self, action: #selector(changeMode), for: .valueChanged)
+        
         chartView.translatesAutoresizingMaskIntoConstraints = false
         periodSegmentControl.translatesAutoresizingMaskIntoConstraints = false
         indicator.translatesAutoresizingMaskIntoConstraints = false
+        modeSegmentControl.translatesAutoresizingMaskIntoConstraints = false
 
         chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         view.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: 0).isActive = true
@@ -112,6 +129,11 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         periodSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         view.trailingAnchor.constraint(equalTo: periodSegmentControl.trailingAnchor, constant: 0).isActive = true
         view.bottomAnchor.constraint(equalTo: periodSegmentControl.bottomAnchor, constant: 0).isActive = true
+        
+        modeSegmentControl.addConstaints(height: 44, width: 120)
+        modeSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
+        modeSegmentControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        
         
         indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -163,13 +185,22 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         self.currentPromise = nil
     }
     
-    private func updateChart(from entity: BondEntity){
+    private func updateChart(from bond: BondEntity){
         print("update Chart with value")
         var valueEntries: [ChartDataEntry] = []
-        for price in entity.prices {
-            let x = price.date.timeIntervalSinceReferenceDate
-            let y = price.value
-            valueEntries.append(ChartDataEntry(x: x, y: y))
+        if currentMode == .price {
+            valueEntries = bond.prices.map{ price in
+                let x = price.date.timeIntervalSinceReferenceDate
+                let y = price.value
+                return ChartDataEntry(x: x, y: y)
+            }
+        } else if currentMode == .yield {
+            let yieldPrice = bond.yield * bond.startPrice
+            valueEntries = bond.prices.map{ price in
+                let x = price.date.timeIntervalSinceReferenceDate
+                let y = yieldPrice / price.value
+                return ChartDataEntry(x: x, y: y)
+            }
         }
         updateChart(from: valueEntries)
     }
@@ -207,6 +238,15 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
     }
     
     @objc func changePeriod(){
+        updateContentData()
+    }
+    
+    @objc func changeMode(){
+        if currentMode == .price {
+            currentMode = .yield
+        } else {
+            currentMode = .price
+        }
         updateContentData()
     }
     
