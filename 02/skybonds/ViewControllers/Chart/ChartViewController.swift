@@ -196,10 +196,13 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
             }
         } else if currentMode == .yield {
             let yieldPrice = bond.yield * bond.startPrice
-            valueEntries = bond.prices.map{ price in
-                let x = price.date.timeIntervalSinceReferenceDate
-                let y = price.value == 0 ? 100 : yieldPrice / price.value
-                return ChartDataEntry(x: x, y: y)
+            valueEntries = bond.prices.compactMap{ price in
+                if price.value > 0 {
+                    let x = price.date.timeIntervalSinceReferenceDate
+                    let y = yieldPrice / price.value
+                    return ChartDataEntry(x: x, y: y)
+                }
+                return nil
             }
         }
         updateChart(from: valueEntries)
