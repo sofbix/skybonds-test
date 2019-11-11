@@ -1,7 +1,12 @@
 import Vapor
+import FluentSQLite
 
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
+    
+    /// Register providers first
+    try services.register(FluentSQLiteProvider())
+    
     /// Register routes to the router
     let router = EngineRouter.default()
     try routes(router)
@@ -17,5 +22,20 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
     middlewares.use(SessionsMiddleware.self)
     services.register(middlewares)
+    
+    
+    
+    let dbStorge = SQLiteStorage.file(path: "skybonds.sqlite")
+    let dbSkybonds = try SQLiteDatabase(storage: dbStorge)
+    
+    var databases = DatabasesConfig()
+    databases.add(database: dbSkybonds, as: .sqlite)
+    services.register(databases)
+    
+    var migrations = MigrationConfig()
+    migrations.add(model: PriceEntity.self, database: .sqlite)
+    services.register(migrations)
+    
+    config.prefer(MemoryKeyedCache.self, for: KeyedCache.self)
     
 }

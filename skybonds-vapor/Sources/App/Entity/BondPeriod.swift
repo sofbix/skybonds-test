@@ -14,6 +14,10 @@ enum BondPeriod : String, CaseIterable, Codable {
     case sixMonth
     case year
     case twoYear
+    
+    static let max: Self = {
+        return allCases.last!
+    }()
 }
 
 extension BondPeriod {
