@@ -7,4 +7,6 @@ public func routes(_ router: Router) throws {
         return "Hello, world!"
     }
 
+    let bondsController = BondsController()
+    router.get("api/bonds", use: bondsController.getBonds)
 }
