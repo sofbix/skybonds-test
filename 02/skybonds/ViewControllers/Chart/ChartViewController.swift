@@ -102,6 +102,7 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
                 if error.isCancelled == false {
                     self?.stopUpdateContentData()
                 }
+                self?.alert(with: error)
                 print("error: \(error)")
             }
         currentPromise = promise
@@ -200,6 +201,17 @@ final class ChartViewController: UIViewController, ChartViewDelegate {
         }
     }
     
+    private func alert(title: String, message: String) {
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: {[weak self] (action) in
+            self?.dismiss(animated: true, completion: nil)
+        }))
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    private func alert(with error: Error) {
+        alert(title: "Ошибка сервиса", message: error.message)
+    }
 }
 
 extension ChartViewController {

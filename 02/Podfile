@@ -7,6 +7,7 @@ target 'skybonds' do
 
   pod 'Charts'
   pod 'PromiseKit'
+  pod 'Alamofire'
 
   # Pods for skybonds
 

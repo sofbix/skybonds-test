@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BondPeriod : String, CaseIterable {
+enum BondPeriod : String, CaseIterable, Codable {
     case week
     case month
     case threeMonth

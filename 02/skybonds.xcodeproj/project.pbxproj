@@ -18,6 +18,10 @@
 		E32AA275237563040059CF5D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA274237563040059CF5D /* UIColor.swift */; };
 		E32AA27723756A560059CF5D /* PromiseKitCancellablePromise.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA27623756A560059CF5D /* PromiseKitCancellablePromise.swift .swift */; };
 		E32AA279237576E50059CF5D /* ChartMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AA278237576E50059CF5D /* ChartMode.swift */; };
+		E369A21F2379B2AC00A2B18C /* Alamofire+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369A21E2379B2AC00A2B18C /* Alamofire+Promise.swift */; };
+		E369A2212379B2F400A2B18C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369A2202379B2F400A2B18C /* ApiError.swift */; };
+		E369A2232379B36F00A2B18C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369A2222379B36F00A2B18C /* Services.swift */; };
+		E369A2252379B98900A2B18C /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369A2242379B98900A2B18C /* Codable.swift */; };
 		E3D68E5D23746B9900DB1C16 /* skybondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */; };
 		E3D68E6823746B9900DB1C16 /* ChartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68E6723746B9900DB1C16 /* ChartUITests.swift */; };
 		E3D68E8123746C6000DB1C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D68E7623746C6000DB1C16 /* Assets.xcassets */; };
@@ -63,6 +67,10 @@
 		E32AA274237563040059CF5D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E32AA27623756A560059CF5D /* PromiseKitCancellablePromise.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PromiseKitCancellablePromise.swift .swift"; sourceTree = "<group>"; };
 		E32AA278237576E50059CF5D /* ChartMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMode.swift; sourceTree = "<group>"; };
+		E369A21E2379B2AC00A2B18C /* Alamofire+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Promise.swift"; sourceTree = "<group>"; };
+		E369A2202379B2F400A2B18C /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		E369A2222379B36F00A2B18C /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		E369A2242379B98900A2B18C /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		E3D68E4223746B8C00DB1C16 /* skybonds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skybonds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68E5823746B9900DB1C16 /* skybondsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skybondsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68E5C23746B9900DB1C16 /* skybondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skybondsTests.swift; sourceTree = "<group>"; };
@@ -124,6 +132,8 @@
 			children = (
 				E305941A2374BFCD003A9A2C /* DateFormatter.swift */,
 				E32AA27623756A560059CF5D /* PromiseKitCancellablePromise.swift .swift */,
+				E369A21E2379B2AC00A2B18C /* Alamofire+Promise.swift */,
+				E369A2242379B98900A2B18C /* Codable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -188,6 +198,7 @@
 				E3D68E7B23746C6000DB1C16 /* AppDelegate.swift */,
 				E3D68E7C23746C6000DB1C16 /* Info.plist */,
 				E30594172374BF70003A9A2C /* Settings.swift */,
+				E369A2222379B36F00A2B18C /* Services.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 				E30594112374B447003A9A2C /* BondPeriod.swift */,
 				E30594152374BD27003A9A2C /* BondEntity.swift */,
 				E30594132374BCDD003A9A2C /* ApiService.swift */,
+				E369A2202379B2F400A2B18C /* ApiError.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -484,13 +496,17 @@
 			files = (
 				E305941B2374BFCD003A9A2C /* DateFormatter.swift in Sources */,
 				E32AA279237576E50059CF5D /* ChartMode.swift in Sources */,
+				E369A2252379B98900A2B18C /* Codable.swift in Sources */,
 				E3D68E8D2374744900DB1C16 /* UIView.swift in Sources */,
 				E3D68E8723746C6000DB1C16 /* ViewController.swift in Sources */,
 				E32AA27723756A560059CF5D /* PromiseKitCancellablePromise.swift .swift in Sources */,
 				E30594182374BF70003A9A2C /* Settings.swift in Sources */,
 				E30594142374BCDD003A9A2C /* ApiService.swift in Sources */,
+				E369A2212379B2F400A2B18C /* ApiError.swift in Sources */,
 				E30594122374B447003A9A2C /* BondPeriod.swift in Sources */,
 				E30594162374BD27003A9A2C /* BondEntity.swift in Sources */,
+				E369A2232379B36F00A2B18C /* Services.swift in Sources */,
+				E369A21F2379B2AC00A2B18C /* Alamofire+Promise.swift in Sources */,
 				E3D68E8423746C6000DB1C16 /* AppDelegate.swift in Sources */,
 				E3D68E8A2374715E00DB1C16 /* ChartViewController.swift in Sources */,
 				E32AA275237563040059CF5D /* UIColor.swift in Sources */,

@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.9.1)
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
@@ -13,18 +14,21 @@ PODS:
     - PromiseKit/CorePromise
 
 DEPENDENCIES:
+  - Alamofire
   - Charts
   - PromiseKit
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Charts
     - PromiseKit
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
 
-PODFILE CHECKSUM: 52ea0c463a670a2fd5f33ffe71659c721b9c1f59
+PODFILE CHECKSUM: ce5fa51625f47a62f844f9fcd3231aa799cae004
 
 COCOAPODS: 1.8.4

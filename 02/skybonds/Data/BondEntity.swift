@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct PriceEntity
+struct PriceEntity : Codable
 {
     let date: Date
     let value: Double
 }
 
-struct BondEntity
+struct BondEntity : Codable
 {
     let startPrice: Double
     /// in procent from startPrice
