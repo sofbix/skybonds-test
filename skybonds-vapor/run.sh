@@ -68,8 +68,8 @@ create(){
 	printInfo "package created & project generated"
 }
 cleanBuild(){
-    #vapor clean - I remove all old build fieles from myself, because it requere dialog user
-	printInfo "clean build dir"
+    #vapor clean - I remove old build files by myself because `vapor clean` require user interaction
+	printInfo "cleaning build dir"
 	rm -f -d -r "${BUILD_DIR}"
 	#printInfo "start building ${COMPILE}"
 	#vapor build "--${COMPILE}"
@@ -78,7 +78,7 @@ cleanBuild(){
 	printInfo "start building ${COMPILE}"
 	swift build -c ${COMPILE}
 	checkExit
-	printInfo "server builded"
+	printInfo "server built"
 
 	printInfo "start deploying"
 	rm -f -d -r "${TEMP_DIR}"
@@ -95,7 +95,7 @@ stopServer(){
 	if ! [ "${PID}" = "" ]
 	then
 		kill ${KILL_PARAM} ${PID}
-		printInfo "server stoped"
+		printInfo "server stopped"
 	fi
 	checkExit
 }
@@ -107,7 +107,7 @@ updateServer(){
 }
 runServer(){
     ${RESULT_DIR}/${RUN} -b ${HOST} ${PARAMS}
-	printInfo "server finished"
+	printInfo "server is running"
 }
 
 if [ "$1" = "resolve" ]
